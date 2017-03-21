@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="e:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="F:\Pro\CSharp\CenterNode\CenterNode\drawpaint\bin\Release\drawpaint.exe">
+   <Modules>
+    <Module Name="drawpaint.exe">
+     <Namespaces>
+      <Namespace Name="drawpaint">
+       <Types>
+        <Type Name="Drawing" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">在 'Drawing' 上实现 IDisposable，因为它创建下列 IDisposable 类型的成员:  'Pen', 'Bitmap'。如果以前提供过 'Drawing'，对于现有使用者来说，向此类型添加用于实现 IDisposable 的新成员属于重大更改。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="Form1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReleaseCapture()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">由于是 P/Invoke 方法，因此，应在名为 NativeMethods、SafeNativeMethods 或 UnsafeNativeMethods 的类中定义 'Form1.ReleaseCapture()'。</Issue>
+            </Message>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">更改 P/Invoke 'Form1.ReleaseCapture()' 的可访问性，使它在自己的程序集外部不再是可见的。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SendMessage(System.IntPtr,System.Int32,System.Int32,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">由于是 P/Invoke 方法，因此，应在名为 NativeMethods、SafeNativeMethods 或 UnsafeNativeMethods 的类中定义 'Form1.SendMessage(IntPtr, int, int, int)'。</Issue>
+            </Message>
+            <Message Id="2" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">如代码中所声明的，P/Invoke 'Form1.SendMessage(IntPtr, int, int, int)' 的参数 'wParam' 在 64 位 平台上的字节宽度将为 4。这是不正确的，因为此 API 的实际本机声明表明该参数在 64 位 平台上的字节宽度应为 8。请参考 MSDN Platform SDK 文档来获取帮助，确定应使用哪种数据类型来代替 'int'。</Issue>
+            </Message>
+            <Message Id="3" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">如代码中所声明的，P/Invoke 'Form1.SendMessage(IntPtr, int, int, int)' 的参数 'lParam' 在 64 位 平台上的字节宽度将为 4。这是不正确的，因为此 API 的实际本机声明表明该参数在 64 位 平台上的字节宽度应为 8。请参考 MSDN Platform SDK 文档来获取帮助，确定应使用哪种数据类型来代替 'int'。</Issue>
+            </Message>
+            <Message Id="return" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Name="Return" Certainty="95" Level="Error">如代码中所声明的，P/Invoke 'Form1.SendMessage(IntPtr, int, int, int)' 的返回类型在 64 位 平台上的字节宽度将为 4。这是不正确的，因为此 API 的实际本机声明表明该返回类型在 64 位 平台上的字节宽度应为 8。请参考 MSDN Platform SDK 文档来获取帮助，确定应使用哪种数据类型来代替 'int'。</Issue>
+            </Message>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">更改 P/Invoke 'Form1.SendMessage(IntPtr, int, int, int)' 的可访问性，使它在自己的程序集外部不再是可见的。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MessageHandler" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">在 'MessageHandler' 上实现 IDisposable，因为它创建下列 IDisposable 类型的成员:  'WebSocket'。如果以前提供过 'MessageHandler'，对于现有使用者来说，向此类型添加用于实现 IDisposable 的新成员属于重大更改。</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#WebsocketStateEvent" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-03-16 03:03:40Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">将 'MessageHandler.WebsocketState' 的第一个参数声明为一个名为“sender”的对象。</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">将 'MessageHandler.WebsocketState' 的第二个参数声明为 EventArgs，或者声明为扩展 EventArgs 的类型的名为“e”的实例。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>正确声明事件处理程序</Name>
+   <Description>按照约定，.NET 事件有两个参数，分别用于指定事件发送方和事件数据。事件处理程序签名应遵循以下形式:  void MyEventHandler(object sender, EventArgs e)。“sender”参数的类型始终是 System.Object，即使该参数可能使用更具体的类型。“e”参数的类型始终是 System.EventArgs。不提供事件数据的事件应使用 System.EventHandler 委托类型。事件处理程序返回 void 以便将每个事件发送给多个目标方法。目标返回的任何值在第一次调用之后将会丢失。</Description>
+   <Resolution Name="First">将 {0} 的第一个参数声明为一个名为“sender”的对象。</Resolution>
+   <Resolution Name="Second">将 {0} 的第二个参数声明为 EventArgs，或者声明为扩展 EventArgs 的类型的名为“e”的实例。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+   <Name>将 P/Invoke 移动到 NativeMethods 类</Name>
+   <Description>此类型包含具有 DllImport 特性的成员。具有 DllImport 特性的成员应包含在名为 NativeMethods、SafeNativeMethods 或 UnsafeNativeMethods 的类中。</Description>
+   <Resolution Name="Default">由于是 P/Invoke 方法，因此，应在名为 NativeMethods、SafeNativeMethods 或 UnsafeNativeMethods 的类中定义 {0}。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182161.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901">
+   <Name>P/Invoke 声明应为可移植声明</Name>
+   <Description>.</Description>
+   <Resolution Name="Parameter">如代码中所声明的，P/Invoke {1} 的参数 {0} 在 {3} 平台上的字节宽度将为 {2}。这是不正确的，因为此 API 的实际本机声明表明该参数在 {3} 平台上的字节宽度应为 {4}。请参考 MSDN Platform SDK 文档来获取帮助，确定应使用哪种数据类型来代替 {5}。</Resolution>
+   <Resolution Name="Return">如代码中所声明的，P/Invoke {0} 的返回类型在 {2} 平台上的字节宽度将为 {1}。这是不正确的，因为此 API 的实际本机声明表明该返回类型在 {2} 平台上的字节宽度应为 {3}。请参考 MSDN Platform SDK 文档来获取帮助，确定应使用哪种数据类型来代替 {4}。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182284(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="portabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401">
+   <Name>P/Invokes 应该是不可见的</Name>
+   <Description>互操作层不应该是公共的。DllImport 特性不应该应用于可公开访问的成员(公共成员或受保护的成员)。</Description>
+   <Resolution Name="Default">更改 P/Invoke {0} 的可访问性，使它在自己的程序集外部不再是可见的。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182209.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">CriticalError</MessageLevel>
+   <File Name="interoperabilityrules.dll" Version="12.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>具有可释放字段的类型应该是可释放的</Name>
+   <Description>声明可释放成员的类型也应实现 IDisposable。如果该类型没有任何非托管资源，请不要在其上实现终结器。</Description>
+   <Resolution Name="DependsOnFix">在 {0} 上实现 IDisposable，因为它创建下列 IDisposable 类型的成员:  {1}。如果以前提供过 {0}，对于现有使用者来说，向此类型添加用于实现 IDisposable 的新成员属于重大更改。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">类别</String>
+  <String Key="Certainty">确定性</String>
+  <String Key="CollapseAll">全部折叠</String>
+  <String Key="CheckId">检查 ID</String>
+  <String Key="Error">错误</String>
+  <String Key="Errors">错误</String>
+  <String Key="ExpandAll">全部展开</String>
+  <String Key="Help">帮助</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">消息</String>
+  <String Key="LocationNotStoredInPdb">[位置未存储在 Pdb 中]</String>
+  <String Key="Project">项目</String>
+  <String Key="Resolution">解析</String>
+  <String Key="Rule">规则</String>
+  <String Key="RuleFile">规则文件</String>
+  <String Key="RuleDescription">规则说明</String>
+  <String Key="Source">源</String>
+  <String Key="Status">状态</String>
+  <String Key="Target">目标</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">代码分析报告</String>
+ </Localized>
+</FxCopReport>
